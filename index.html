@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff5f4">
+  <meta name="description" content="A little digital garden filled with flowers, made just for you.">
+  <title>sumsum's top 3 flowers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <span class="glow glow-one"></span><span class="glow glow-two"></span>
+    <div class="petal-drift" id="petalDrift"></div>
+  </div>
+
+  <main class="garden">
+    <header class="intro">
+      <p class="eyebrow"><span></span> A LITTLE SOMETHING FOR YOU <span></span></p>
+      <h1>A Garden <em>Just for You</em></h1>
+      <p class="subtitle">Choose a flower and let it bloom.</p>
+    </header>
+
+    <nav class="flower-nav" aria-label="Choose a flower">
+      <button class="nav-option active" type="button" data-flower="carnation" aria-pressed="true">Carnations</button>
+      <button class="nav-option" type="button" data-flower="sunflower" aria-pressed="false">Sunflowers</button>
+      <button class="nav-option" type="button" data-flower="tulip" aria-pressed="false">Tulips</button>
+    </nav>
+
+    <section class="flower-stage" aria-label="Selected flower">
+      <div class="stage-caption">
+        <span class="caption-line"></span>
+        <p id="flowerName">The Carnation</p>
+        <span class="caption-line"></span>
+      </div>
+
+      <div class="flower-wrap" id="flowerWrap">
+        <!-- carnation: layered ruffled petals, sepals, stem and leaves -->
+        <svg class="flower-art" id="carnation" viewBox="0 0 420 520" role="img" aria-label="A soft pink carnation">
+          <defs>
+            <linearGradient id="cStem" x1="0" x2="1"><stop stop-color="#477b54"/><stop offset=".5" stop-color="#78a66d"/><stop offset="1" stop-color="#3d704b"/></linearGradient>
+            <radialGradient id="cPetal"><stop stop-color="#fff0f2"/><stop offset=".65" stop-color="#f6aebc"/><stop offset="1" stop-color="#df718e"/></radialGradient>
+            <radialGradient id="cInner"><stop stop-color="#fff6f4"/><stop offset="1" stop-color="#ed91a7"/></radialGradient>
+          </defs>
+          <path class="stem" d="M210 230 C205 315 218 394 207 493" fill="none" stroke="url(#cStem)" stroke-width="9" stroke-linecap="round"/>
+          <path class="leaf" d="M209 365 C155 322 108 331 91 355 C132 390 176 389 209 365Z" fill="#6f9e68"/>
+          <path class="leaf leaf-two" d="M211 414 C250 366 300 365 322 389 C289 426 250 435 211 414Z" fill="#4f875c"/>
+          <path d="M207 364 Q151 353 104 354 M212 413 Q268 393 310 390" fill="none" stroke="#a9c58a" stroke-width="2" opacity=".7"/>
+          <path d="M210 242 L183 205 L237 205Z" fill="#4c8758"/>
+          <g class="bloom">
+            <g fill="#e77f9a">
+              <ellipse cx="210" cy="142" rx="39" ry="81" transform="rotate(-5 210 142)"/>
+              <ellipse cx="210" cy="142" rx="39" ry="81" transform="rotate(45 210 142)"/>
+              <ellipse cx="210" cy="142" rx="39" ry="81" transform="rotate(90 210 142)"/>
+              <ellipse cx="210" cy="142" rx="39" ry="81" transform="rotate(135 210 142)"/>
+            </g>
+            <g fill="url(#cPetal)" stroke="#e88da2" stroke-width="1.5">
+              <path d="M210 151 C172 130 157 78 180 45 C188 69 204 65 207 32 C229 57 234 91 210 151Z"/>
+              <path d="M210 151 C170 154 127 124 128 88 C150 102 161 88 150 59 C184 68 208 102 210 151Z" transform="rotate(72 210 142)"/>
+              <path d="M210 151 C170 154 127 124 128 88 C150 102 161 88 150 59 C184 68 208 102 210 151Z" transform="rotate(144 210 142)"/>
+              <path d="M210 151 C170 154 127 124 128 88 C150 102 161 88 150 59 C184 68 208 102 210 151Z" transform="rotate(216 210 142)"/>
+              <path d="M210 151 C170 154 127 124 128 88 C150 102 161 88 150 59 C184 68 208 102 210 151Z" transform="rotate(288 210 142)"/>
+            </g>
+            <g fill="url(#cInner)" stroke="#f4b2bf" stroke-width="1.2">
+              <path d="M210 151 C180 128 178 92 199 69 C205 87 214 85 222 67 C241 99 232 132 210 151Z"/>
+              <path d="M210 151 C178 133 167 104 183 81 C195 94 204 89 210 76 C228 104 227 132 210 151Z" transform="rotate(90 210 142)"/>
+              <path d="M210 151 C178 133 167 104 183 81 C195 94 204 89 210 76 C228 104 227 132 210 151Z" transform="rotate(180 210 142)"/>
+              <path d="M210 151 C178 133 167 104 183 81 C195 94 204 89 210 76 C228 104 227 132 210 151Z" transform="rotate(270 210 142)"/>
+            </g>
+            <circle cx="210" cy="139" r="17" fill="#f9c4c7"/>
+          </g>
+        </svg>
+
+        <!-- sunflower -->
+        <svg class="flower-art hidden" id="sunflower" viewBox="0 0 420 520" role="img" aria-label="A golden sunflower">
+          <defs>
+            <linearGradient id="sStem" x1="0" x2="1"><stop stop-color="#3f754b"/><stop offset=".5" stop-color="#82a95d"/><stop offset="1" stop-color="#47764a"/></linearGradient>
+            <radialGradient id="sCenter"><stop stop-color="#9a572c"/><stop offset=".7" stop-color="#71401f"/><stop offset="1" stop-color="#482b1d"/></radialGradient>
+          </defs>
+          <path class="stem" d="M210 220 C216 320 200 402 210 493" stroke="url(#sStem)" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path class="leaf" d="M208 365 C160 319 110 326 91 352 C126 389 174 391 208 365Z" fill="#67965b"/>
+          <path class="leaf leaf-two" d="M210 420 C257 369 306 371 328 394 C291 431 249 440 210 420Z" fill="#4d8050"/>
+          <path d="M207 365 Q151 347 104 352 M212 419 Q267 398 317 395" fill="none" stroke="#b0c77e" stroke-width="2"/>
+          <g class="bloom">
+            <g fill="#f5bd38" stroke="#e6a526" stroke-width="1.5">
+              <ellipse cx="210" cy="137" rx="25" ry="91"/>
+              <ellipse cx="210" cy="137" rx="25" ry="91" transform="rotate(30 210 137)"/>
+              <ellipse cx="210" cy="137" rx="25" ry="91" transform="rotate(60 210 137)"/>
+              <ellipse cx="210" cy="137" rx="25" ry="91" transform="rotate(90 210 137)"/>
+              <ellipse cx="210" cy="137" rx="25" ry="91" transform="rotate(120 210 137)"/>
+              <ellipse cx="210" cy="137" rx="25" ry="91" transform="rotate(150 210 137)"/>
+            </g>
+            <g fill="#ffd65b" opacity=".8">
+              <ellipse cx="210" cy="137" rx="13" ry="76" transform="rotate(15 210 137)"/>
+              <ellipse cx="210" cy="137" rx="13" ry="76" transform="rotate(75 210 137)"/>
+              <ellipse cx="210" cy="137" rx="13" ry="76" transform="rotate(135 210 137)"/>
+            </g>
+            <circle cx="210" cy="137" r="65" fill="url(#sCenter)" stroke="#5c351f" stroke-width="3"/>
+            <g fill="#d49a4c" opacity=".75">
+              <circle cx="184" cy="113" r="3"/><circle cx="207" cy="99" r="3"/><circle cx="230" cy="116" r="3"/>
+              <circle cx="175" cy="142" r="3"/><circle cx="196" cy="132" r="3"/><circle cx="220" cy="137" r="3"/>
+              <circle cx="242" cy="147" r="3"/><circle cx="190" cy="160" r="3"/><circle cx="215" cy="170" r="3"/>
+              <circle cx="232" cy="91" r="2.5"/><circle cx="160" cy="128" r="2.5"/><circle cx="253" cy="126" r="2.5"/>
+              <circle cx="204" cy="147" r="2.5"/><circle cx="226" cy="155" r="2.5"/><circle cx="183" cy="91" r="2.5"/>
+            </g>
+          </g>
+        </svg>
+
+        <!-- tulip -->
+        <svg class="flower-art hidden" id="tulip" viewBox="0 0 420 520" role="img" aria-label="A graceful pink tulip">
+          <defs>
+            <linearGradient id="tStem" x1="0" x2="1"><stop stop-color="#477b50"/><stop offset=".5" stop-color="#83aa70"/><stop offset="1" stop-color="#3d7048"/></linearGradient>
+            <linearGradient id="tPetal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffd4dc"/><stop offset=".5" stop-color="#f18da8"/><stop offset="1" stop-color="#c94f77"/></linearGradient>
+          </defs>
+          <path class="stem" d="M210 220 C205 315 219 403 210 493" stroke="url(#tStem)" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path class="leaf" d="M210 390 C156 320 109 333 99 369 C126 416 175 426 210 390Z" fill="#6f9d67"/>
+          <path class="leaf leaf-two" d="M211 438 C245 367 293 356 317 382 C297 431 255 457 211 438Z" fill="#4d8055"/>
+          <path d="M208 390 Q158 361 112 369 M212 437 Q269 400 306 385" fill="none" stroke="#b6ce91" stroke-width="2"/>
+          <path d="M210 241 L182 204 L238 204Z" fill="#54845a"/>
+          <g class="bloom">
+            <path d="M143 167 C137 112 151 60 188 42 C195 84 204 100 210 103 C216 83 228 54 244 42 C280 70 288 120 277 167 C257 199 236 211 210 211 C184 211 160 197 143 167Z" fill="url(#tPetal)" stroke="#d56d8c" stroke-width="2"/>
+            <path d="M145 164 C128 119 138 77 166 58 C177 88 183 119 190 166 C174 183 158 180 145 164Z" fill="#f7aabd" stroke="#e17d99" stroke-width="1.5"/>
+            <path d="M275 164 C292 119 282 77 254 58 C243 88 237 119 230 166 C246 183 262 180 275 164Z" fill="#d96d91" stroke="#c85b7d" stroke-width="1.5"/>
+            <path d="M190 174 C185 118 195 76 210 49 C225 76 235 118 230 174 C222 190 198 190 190 174Z" fill="#ffc4d0" opacity=".9"/>
+            <path d="M210 210 C202 250 204 278 210 304" stroke="#6b965d" stroke-width="3" fill="none" opacity=".6"/>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <div class="controls">
+      <button class="action-button bloom-button" id="bloomBtn" type="button"><span aria-hidden="true">✿</span> Bloom</button>
+      <button class="action-button reset-button" id="resetBtn" type="button"><span aria-hidden="true">↺</span> Reset</button>
+    </div>
+
+    <footer>made by your bff<span aria-hidden="true">♡</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
