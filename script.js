@@ -1,4 +1,4 @@
-// Flower collection: switch flowers, bloom/reset, and add little magical touches.
+// flower collection: switch flowers, bloom/reset, and add little magical touches.
 const flowerButtons = document.querySelectorAll(".nav-option");
 const flowers = document.querySelectorAll(".flower-art");
 const flowerWrap = document.getElementById("flowerWrap");
@@ -54,7 +54,7 @@ resetBtn.addEventListener("click", () => {
   makeMagic("✧");
 });
 
-// Clicking the flower creates a small sparkle and a floating heart.
+// clicking the flower creates a small sparkle and a floating heart.
 flowerWrap.addEventListener("click", event => {
   const rect = flowerWrap.getBoundingClientRect();
   const x = event.clientX || rect.left + rect.width / 2;
@@ -73,7 +73,7 @@ function makeMagic(symbol, x, y) {
   setTimeout(() => sparkle.remove(), 1400);
 }
 
-// A few softly drifting petals in the background.
+// a few softly drifting petals in the background.
 const petalDrift = document.getElementById("petalDrift");
 const petalSymbols = ["✿", "❀", "·", "✧"];
 
